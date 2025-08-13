@@ -3,7 +3,10 @@ import { ArrowLeft } from 'lucide-react';
 
 export const metadata = {
   title: 'Privacy Policy - I have Tools',
-  description: 'Privacy Policy for I have Tools - Learn how we protect your privacy when using our free online tools.',
+  description: 'Learn how I have Tools protects your privacy when using our free online tools. We value your data security and transparency.',
+  alternates: {
+    canonical: 'https://apphave.fun/privacy-policy',
+  },
 };
 
 export default function PrivacyPolicy() {
@@ -29,7 +32,7 @@ export default function PrivacyPolicy() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
           <div className="prose prose-gray max-w-none">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2" id="privacy-policy">Privacy Policy</h1>
             <p className="text-gray-600 mb-8">Last updated: August 13, 2025</p>
 
             <section className="mb-8">

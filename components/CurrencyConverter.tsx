@@ -299,7 +299,7 @@ export default function CurrencyConverter() {
     <div className="max-w-2xl mx-auto">
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center space-x-2">
+          <CardTitle className="flex items-center space-x-2" id="currency-converter">
             <DollarSign className="w-5 h-5" />
             <span>Currency Converter</span>
           </CardTitle>

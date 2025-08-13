@@ -8,10 +8,10 @@ const DynamicToaster = dynamic(() => import('sonner').then((mod) => mod.Toaster)
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'I have Tools - Free Online Multi-Tool App | Currency Converter, Calculator & More',
-  description: 'Free online tools including currency converter, unit converter, time zone converter, calculator, and wheel of names. Fast, accurate, and no installation required. Convert currencies, calculate units, manage time zones instantly.',
+  title: 'I have Tools - Free Online Tools for Instant Conversions & Calculations',
+  description: '100% free online tools: currency converter, unit converter, time zone converter, calculator, and wheel of names. Fast, accurate conversions with no signup required. Perfect for students, professionals, and everyday use.',
   metadataBase: new URL('https://apphave.fun'),
-  keywords: 'currency converter, unit converter, calculator, time zone converter, wheel of names, online tools, free tools, conversion tools',
+  keywords: 'free online tools, currency converter, unit converter, calculator, time zone converter, wheel of names, conversion tools, calculate units, convert currencies',
   authors: [{ name: 'I have Tools' }],
   creator: 'I have Tools',
   publisher: 'I have Tools',
@@ -23,12 +23,21 @@ export const metadata: Metadata = {
     siteName: 'I have Tools',
     type: 'website',
     locale: 'en_US',
+    images: [
+      {
+        url: 'https://apphave.fun/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'I have Tools - Free Online Tools',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'I have Tools - Free Online Multi-Tool App',
     description: 'Free online tools including currency converter, unit converter, time zone converter, calculator, and wheel of names.',
     creator: '@ihavetools',
+    images: ['https://apphave.fun/logo.png'],
   },
   alternates: {
     canonical: 'https://apphave.fun',
@@ -43,6 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-adsense-account" content="ca-pub-6435811821902528" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6435811821902528" crossOrigin="anonymous"></script>
         

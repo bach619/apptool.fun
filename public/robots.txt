@@ -10,14 +10,9 @@ google.com, pub-6435811821902528, DIRECT, f08c47fec0942fa0
 # Crawl-delay
 Crawl-delay: 1
 
-# Disallow admin areas (if any)
-Disallow: /admin/
-Disallow: /private/
-Disallow: /*.json$
-Disallow: /*?*
+# Disallow API routes
+Disallow: /api/
 
 # Allow important files
 Allow: /sitemap.xml
 Allow: /robots.txt
-Allow: /*.css$
-Allow: /*.js$

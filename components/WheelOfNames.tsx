@@ -33,6 +33,7 @@ export default function WheelOfNames() {
       }
     }
   }, [urlParams]);
+
   const colors = [
     'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
@@ -63,16 +64,29 @@ export default function WheelOfNames() {
     setIsSpinning(true);
     setWinner(null);
     
+    // Generate random final position
     const spins = Math.floor(Math.random() * 5) + 5; // 5-10 full rotations
-    const finalRotation = spins * 360 + Math.random() * 360;
+    const finalAngle = Math.random() * 360; // Random final position
+    const finalRotation = spins * 360 + finalAngle;
     const newRotation = rotation + finalRotation;
     
     setRotation(newRotation);
     
     setTimeout(() => {
-      const normalizedRotation = newRotation % 360;
+      // Calculate winner based on final rotation
       const segmentAngle = 360 / names.length;
-      const winnerIndex = Math.floor((360 - normalizedRotation + segmentAngle / 2) / segmentAngle) % names.length;
+      
+      // Normalize the final rotation to 0-360 degrees
+      const normalizedRotation = newRotation % 360;
+      
+      // The pointer is at the top (0 degrees), so we need to find which segment is at the top
+      // Since the wheel rotates clockwise, we need to account for the direction
+      // The first segment (index 0) starts at 0 degrees and goes to segmentAngle degrees
+      
+      // Calculate which segment the pointer (at 0 degrees) is pointing to
+      // We need to reverse the calculation since the wheel rotates clockwise
+      const pointerAngle = (360 - normalizedRotation) % 360;
+      const winnerIndex = Math.floor(pointerAngle / segmentAngle) % names.length;
       
       setWinner(names[winnerIndex]);
       setIsSpinning(false);
@@ -202,17 +216,17 @@ export default function WheelOfNames() {
                             style={{
                               top: '50%',
                               left: '50%',
-                             transform: `translate(-50%, -50%) rotate(${segmentAngle / 2}deg) translateY(-80px)`,
+                              transform: `translate(-50%, -50%) rotate(${segmentAngle / 2}deg) translateY(-80px)`,
                               transformOrigin: 'center'
                             }}
                           >
                             <div 
                               className="text-white font-medium whitespace-nowrap"
                               style={{
-                               transform: `rotate(${segmentAngle > 60 ? 0 : -90}deg)`,
-                               fontSize: Math.min(18, 250 / names.length) + 'px',
+                                transform: `rotate(${segmentAngle > 60 ? 0 : -90}deg)`,
+                                fontSize: Math.min(18, 250 / names.length) + 'px',
                                 textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
-                               maxWidth: `${Math.min(120, 350 / names.length)}px`,
+                                maxWidth: `${Math.min(120, 350 / names.length)}px`,
                                 overflow: 'visible',
                                 textAlign: 'center'
                               }}

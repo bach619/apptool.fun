@@ -44,61 +44,24 @@ export default function ContactSupport() {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <MessageCircle className="w-5 h-5" />
-                <span>Send us a Message</span>
+                <span>Contact Form Closed</span>
               </CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you as soon as possible.
+                Due to security concerns, we've temporarily disabled our contact form.
+                Please contact us via email instead.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name *
-                  </label>
-                  <Input placeholder="Enter your first name" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name *
-                  </label>
-                  <Input placeholder="Enter your last name" />
-                </div>
+            <CardContent>
+              <div className="text-center p-6">
+                <p className="text-gray-600 mb-4">
+                  To contact us, please email:
+                </p>
+                <p className="text-lg font-semibold">
+                  <a href="mailto:support@apptool.fun" className="text-blue-600 hover:underline">
+                    support@apptool.fun
+                  </a>
+                </p>
               </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
-                </label>
-                <Input type="email" placeholder="Enter your email address" />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject *
-                </label>
-                <Input placeholder="What's this about?" />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  rows={6}
-                  placeholder="Please describe your question or issue in detail..."
-                />
-              </div>
-
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                <Mail className="w-4 h-4 mr-2" />
-                Send Message
-              </Button>
-
-              <p className="text-sm text-gray-500 text-center">
-                We typically respond within 24 hours during business days.
-              </p>
             </CardContent>
           </Card>
 
@@ -119,14 +82,14 @@ export default function ContactSupport() {
                     <div className="space-y-1">
                       <p className="text-sm">
                         <strong>General Support:</strong> 
-                        <a href="mailto:support@ihavetools.com" className="text-blue-600 hover:text-blue-700 ml-1">
-                          support@ihavetools.com
+                        <a href="mailto:support@apptool.fun" className="text-blue-600 hover:text-blue-700 ml-1">
+                          support@apptool.fun
                         </a>
                       </p>
                       <p className="text-sm">
                         <strong>Technical Issues:</strong> 
-                        <a href="mailto:tech@ihavetools.com" className="text-blue-600 hover:text-blue-700 ml-1">
-                          tech@ihavetools.com
+                        <a href="mailto:tech@apptool.fun" className="text-blue-600 hover:text-blue-700 ml-1">
+                          tech@apptool.fun
                         </a>
                       </p>
                     </div>

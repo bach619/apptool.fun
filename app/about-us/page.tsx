@@ -340,10 +340,10 @@ export default function AboutUs() {
                   Questions about our tools or suggestions for new features
                 </p>
                 <a 
-                  href="mailto:info@ihavetools.com" 
+                  href="mailto:info@apptool.fun" 
                   className="text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  info@ihavetools.com
+                  info@apptool.fun
                 </a>
               </div>
               <div>
@@ -352,10 +352,10 @@ export default function AboutUs() {
                   Having trouble with our tools? We're here to help
                 </p>
                 <a 
-                  href="mailto:support@ihavetools.com" 
+                  href="mailto:support@apptool.fun" 
                   className="text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  support@ihavetools.com
+                  support@apptool.fun
                 </a>
               </div>
             </div>

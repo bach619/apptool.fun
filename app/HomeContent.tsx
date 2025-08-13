@@ -106,44 +106,29 @@ export default function HomeContent() {
               <h4 className="text-lg font-semibold mb-4">Tools</h4>
               <ul className="space-y-2 text-gray-300">
                 <li>
-                  <button 
-                    onClick={() => setActiveTab('currency')}
-                    className="hover:text-white transition-colors"
-                  >
+                  <Link href="/" className="hover:text-white transition-colors">
                     Currency Converter
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => setActiveTab('units')}
-                    className="hover:text-white transition-colors"
-                  >
+                  <Link href="/" className="hover:text-white transition-colors">
                     Unit Converter
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => setActiveTab('timezone')}
-                    className="hover:text-white transition-colors"
-                  >
+                  <Link href="/" className="hover:text-white transition-colors">
                     Time Zone Converter
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => setActiveTab('calculator')}
-                    className="hover:text-white transition-colors"
-                  >
+                  <Link href="/" className="hover:text-white transition-colors">
                     Calculator
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => setActiveTab('wheel')}
-                    className="hover:text-white transition-colors"
-                  >
+                  <Link href="/" className="hover:text-white transition-colors">
                     Wheel of Names
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -163,9 +148,9 @@ export default function HomeContent() {
                   </Link>
                 </li>
                 <li>
-                  <a href="mailto:support@apptool.fun" className="hover:text-white transition-colors">
+                  <Link href="/contact-support" className="hover:text-white transition-colors">
                     Contact Support
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/about-us" className="hover:text-white transition-colors">
@@ -189,7 +174,7 @@ export default function HomeContent() {
                 <Link href="/terms-of-service" className="hover:text-white transition-colors">
                   Terms
                 </Link>
-                <a href="mailto:support@apptool.fun" className="hover:text-white transition-colors">
+                <a href="/contact-support" className="hover:text-white transition-colors">
                   Support
                 </a>
               </div>

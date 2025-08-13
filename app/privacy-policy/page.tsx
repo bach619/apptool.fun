@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 export const metadata = {
-  title: 'Kebijakan Privasi - I have Tools',
-  description: 'Kebijakan Privasi untuk I have Tools - Pelajari bagaimana kami melindungi privasi Anda saat menggunakan alat online gratis kami.',
+  title: 'Privacy Policy - I have Tools',
+  description: 'Privacy Policy for I have Tools - Learn how we protect your privacy when using our free online tools.',
 };
 
 export default function PrivacyPolicy() {
@@ -18,9 +18,9 @@ export default function PrivacyPolicy() {
               className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
-              <span>Kembali ke Alat</span>
+              <span>Back to Tools</span>
             </Link>
-            <h1 className="text-xl font-bold text-gray-900">Kebijakan Privasi</h1>
+            <h1 className="text-xl font-bold text-gray-900">Privacy Policy</h1>
           </div>
         </div>
       </header>
@@ -29,187 +29,187 @@ export default function PrivacyPolicy() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8">
           <div className="prose prose-gray max-w-none">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Kebijakan Privasi</h1>
-            <p className="text-gray-600 mb-8">Terakhir diperbarui: 27 Januari 2025</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
+            <p className="text-gray-600 mb-8">Last updated: August 13, 2025</p>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Pendahuluan</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">1. Introduction</h2>
               <p className="text-gray-700 mb-4">
-                I have Tools ("kami", "kita", atau "milik kami") berkomitmen untuk melindungi privasi Anda. Kebijakan Privasi ini menjelaskan bagaimana kami mengumpulkan, menggunakan, dan melindungi informasi Anda saat Anda menggunakan situs web I have Tools (ihavetools.com) dan layanan terkait ("Layanan").
+                I have Tools ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and protect your information when you use the I have Tools website (apptool.fun) and related services ("Services").
               </p>
               <p className="text-gray-700">
-                Dengan menggunakan Layanan kami, Anda menyetujui pengumpulan dan penggunaan informasi sesuai dengan Kebijakan Privasi ini.
+                By using our Services, you agree to the collection and use of information in accordance with this Privacy Policy.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Informasi yang Kami Kumpulkan</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">2. Information We Collect</h2>
               
-              <h3 className="text-xl font-medium text-gray-900 mb-3">2.1 Informasi yang Dikumpulkan Secara Otomatis</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">2.1 Automatically Collected Information</h3>
               <p className="text-gray-700 mb-4">
-                Ketika Anda mengunjungi situs web kami, kami secara otomatis mengumpulkan informasi tertentu tentang perangkat dan penggunaan Anda, termasuk:
+                When you visit our website, we automatically collect certain information about your device and usage, including:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                <li>Alamat IP</li>
-                <li>Jenis browser dan versi</li>
-                <li>Sistem operasi</li>
-                <li>Halaman yang dikunjungi dan waktu kunjungan</li>
-                <li>Sumber rujukan (referrer)</li>
-                <li>Data penggunaan dan preferensi</li>
+                <li>IP address</li>
+                <li>Browser type and version</li>
+                <li>Operating system</li>
+                <li>Visited pages and visit time</li>
+                <li>Referral source</li>
+                <li>Usage data and preferences</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">2.2 Informasi yang Anda Berikan</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">2.2 Information You Provide</h3>
               <p className="text-gray-700 mb-4">
-                Kami dapat mengumpulkan informasi yang Anda berikan secara sukarela, seperti:
+                We may collect information you voluntarily provide, such as:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                <li>Data input untuk alat konversi (jumlah, mata uang, satuan, dll.)</li>
-                <li>Informasi kontak jika Anda menghubungi kami</li>
-                <li>Umpan balik atau komentar yang Anda berikan</li>
+                <li>Input data for conversion tools (amounts, currencies, units, etc.)</li>
+                <li>Contact information if you contact us</li>
+                <li>Feedback or comments you provide</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">2.3 Cookies dan Teknologi Pelacakan</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">2.3 Cookies and Tracking Technologies</h3>
               <p className="text-gray-700 mb-4">
-                Kami menggunakan cookies dan teknologi pelacakan serupa untuk:
+                We use cookies and similar tracking technologies to:
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-1">
-                <li>Meningkatkan pengalaman pengguna</li>
-                <li>Menganalisis penggunaan situs web</li>
-                <li>Menyimpan preferensi pengguna</li>
-                <li>Menyediakan iklan yang relevan</li>
+                <li>Enhance user experience</li>
+                <li>Analyze website usage</li>
+                <li>Store user preferences</li>
+                <li>Provide relevant advertising</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. Bagaimana Kami Menggunakan Informasi Anda</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">3. How We Use Your Information</h2>
               
-              <h3 className="text-xl font-medium text-gray-900 mb-3">3.1 Tujuan Penggunaan</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">3.1 Usage Purposes</h3>
               <p className="text-gray-700 mb-4">
-                Kami menggunakan informasi yang dikumpulkan untuk:
+                We use collected information to:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                <li>Menyediakan dan memelihara Layanan</li>
-                <li>Meningkatkan, mempersonalisasi, dan mengembangkan Layanan</li>
-                <li>Memahami dan menganalisis cara Anda menggunakan Layanan</li>
-                <li>Mengembangkan fitur, produk, dan layanan baru</li>
-                <li>Berkomunikasi dengan Anda untuk layanan pelanggan dan dukungan</li>
-                <li>Mengirimkan informasi teknis, pembaruan, dan pemberitahuan keamanan</li>
-                <li>Mencegah penipuan dan aktivitas ilegal</li>
+                <li>Provide and maintain Services</li>
+                <li>Improve, personalize, and develop Services</li>
+                <li>Understand and analyze how you use Services</li>
+                <li>Develop new features, products, and services</li>
+                <li>Communicate with you for customer service and support</li>
+                <li>Send technical information, updates, and security notices</li>
+                <li>Prevent fraud and illegal activities</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">3.2 Dasar Hukum Pemrosesan</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">3.2 Legal Basis for Processing</h3>
               <p className="text-gray-700 mb-4">
-                Kami memproses data pribadi Anda berdasarkan:
+                We process your personal data based on:
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-1">
-                <li>Persetujuan Anda</li>
-                <li>Kepentingan sah kami dalam menyediakan dan meningkatkan Layanan</li>
-                <li>Kepatuhan terhadap kewajiban hukum</li>
+                <li>Your consent</li>
+                <li>Our legitimate interest in providing and improving Services</li>
+                <li>Compliance with legal obligations</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Berbagi Informasi dengan Pihak Ketiga</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">4. Sharing Information with Third Parties</h2>
               
-              <h3 className="text-xl font-medium text-gray-900 mb-3">4.1 Layanan Pihak Ketiga</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">4.1 Third-Party Services</h3>
               <p className="text-gray-700 mb-4">
-                Kami dapat berbagi informasi dengan penyedia layanan pihak ketiga yang membantu kami mengoperasikan Layanan, termasuk:
+                We may share information with third-party service providers that help us operate Services, including:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                <li><strong>Google Analytics</strong>: untuk analisis penggunaan situs web</li>
-                <li><strong>Google AdSense</strong>: untuk menampilkan iklan yang relevan</li>
-                <li><strong>Penyedia hosting</strong>: untuk menyimpan dan menyajikan konten situs web</li>
+                <li><strong>Google Analytics</strong>: for website usage analysis</li>
+                <li><strong>Google AdSense</strong>: for displaying relevant ads</li>
+                <li><strong>Hosting providers</strong>: for storing and serving website content</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">4.2 Pembatasan Berbagi</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">4.2 Sharing Restrictions</h3>
               <p className="text-gray-700">
-                Kami tidak menjual, memperdagangkan, atau mentransfer informasi pribadi Anda kepada pihak ketiga tanpa persetujuan Anda, kecuali:
+                We do not sell, trade, or transfer your personal information to third parties without your consent, except:
               </p>
               <ul className="list-disc list-inside text-gray-700 space-y-1">
-                <li>Untuk mematuhi hukum atau proses hukum</li>
-                <li>Untuk melindungi hak, properti, atau keselamatan kami atau orang lain</li>
-                <li>Dalam kasus merger, akuisisi, atau penjualan aset</li>
+                <li>To comply with laws or legal processes</li>
+                <li>To protect our rights, property, or safety or that of others</li>
+                <li>In case of merger, acquisition, or asset sale</li>
               </ul>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Keamanan Data</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">5. Data Security</h2>
               
-              <h3 className="text-xl font-medium text-gray-900 mb-3">5.1 Langkah-langkah Keamanan</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">5.1 Security Measures</h3>
               <p className="text-gray-700 mb-4">
-                Kami menerapkan langkah-langkah keamanan yang sesuai untuk melindungi informasi Anda, termasuk:
+                We implement appropriate security measures to protect your information, including:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                <li>Enkripsi data dalam transit menggunakan SSL/TLS</li>
-                <li>Akses terbatas ke data pribadi</li>
-                <li>Pemantauan keamanan reguler</li>
-                <li>Pembaruan keamanan sistem secara berkala</li>
+                <li>Data encryption in transit using SSL/TLS</li>
+                <li>Limited access to personal data</li>
+                <li>Regular security monitoring</li>
+                <li>Periodic system security updates</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">5.2 Keterbatasan Keamanan</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">5.2 Security Limitations</h3>
               <p className="text-gray-700">
-                Meskipun kami berusaha melindungi informasi Anda, tidak ada metode transmisi melalui internet atau penyimpanan elektronik yang 100% aman. Kami tidak dapat menjamin keamanan absolut informasi Anda.
+                While we strive to protect your information, no method of internet transmission or electronic storage is 100% secure. We cannot guarantee absolute security of your information.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Retensi Data</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">6. Data Retention</h2>
               <p className="text-gray-700 mb-4">
-                Kami menyimpan informasi pribadi Anda hanya selama diperlukan untuk tujuan yang dijelaskan dalam Kebijakan Privasi ini, kecuali periode retensi yang lebih lama diperlukan atau diizinkan oleh hukum.
+                We retain personal information only as long as necessary for the purposes described in this Privacy Policy, unless a longer retention period is required or permitted by law.
               </p>
               <p className="text-gray-700 mb-4">
-                Data input untuk alat konversi tidak disimpan secara permanen dan hanya diproses sementara untuk memberikan hasil konversi.
+                Input data for conversion tools is not permanently stored and is only temporarily processed to provide conversion results.
               </p>
               <p className="text-gray-700">
-                Data analitik dapat disimpan hingga 26 bulan untuk membantu kami memahami pola penggunaan dan meningkatkan Layanan.
+                Analytical data may be stored for up to 26 months to help us understand usage patterns and improve Services.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Hak-hak Anda</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">7. Your Rights</h2>
               
-              <h3 className="text-xl font-medium text-gray-900 mb-3">7.1 Hak Akses dan Kontrol</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">7.1 Access and Control Rights</h3>
               <p className="text-gray-700 mb-4">
-                Sesuai dengan hukum perlindungan data Indonesia, Anda memiliki hak untuk:
+                Under applicable data protection laws, you have the right to:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
-                <li>Mengakses informasi pribadi yang kami miliki tentang Anda</li>
-                <li>Meminta koreksi informasi yang tidak akurat</li>
-                <li>Meminta penghapusan informasi pribadi Anda</li>
-                <li>Membatasi pemrosesan informasi Anda</li>
-                <li>Meminta portabilitas data</li>
-                <li>Menarik persetujuan kapan saja</li>
+                <li>Access personal information we hold about you</li>
+                <li>Request correction of inaccurate information</li>
+                <li>Request deletion of your personal information</li>
+                <li>Restrict processing of your information</li>
+                <li>Request data portability</li>
+                <li>Withdraw consent at any time</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">7.2 Cara Menggunakan Hak Anda</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">7.2 How to Exercise Your Rights</h3>
               <p className="text-gray-700">
-                Untuk menggunakan hak-hak ini, silakan hubungi kami melalui informasi kontak yang disediakan di bawah ini.
+                To exercise these rights, please contact us using the contact information provided below.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Cookies dan Preferensi</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">8. Cookies and Preferences</h2>
               
-              <h3 className="text-xl font-medium text-gray-900 mb-3">8.1 Jenis Cookies</h3>
-              <p className="text-gray-700 mb-4">Kami menggunakan berbagai jenis cookies:</p>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">8.1 Types of Cookies</h3>
+              <p className="text-gray-700 mb-4">We use various types of cookies:</p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-2">
-                <li><strong>Cookies Esensial</strong>: diperlukan untuk fungsi dasar situs web</li>
-                <li><strong>Cookies Analitik</strong>: membantu kami memahami penggunaan situs web</li>
-                <li><strong>Cookies Iklan</strong>: digunakan untuk menampilkan iklan yang relevan</li>
+                <li><strong>Essential Cookies</strong>: required for basic website functionality</li>
+                <li><strong>Analytical Cookies</strong>: help us understand website usage</li>
+                <li><strong>Advertising Cookies</strong>: used to display relevant ads</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">8.2 Mengelola Cookies</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">8.2 Managing Cookies</h3>
               <p className="text-gray-700">
-                Anda dapat mengontrol dan mengelola cookies melalui pengaturan browser Anda. Namun, menonaktifkan cookies tertentu dapat mempengaruhi fungsionalitas situs web.
+                You can control and manage cookies through your browser settings. However, disabling certain cookies may affect website functionality.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Layanan Pihak Ketiga</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">9. Third-Party Services</h2>
               
               <h3 className="text-xl font-medium text-gray-900 mb-3">9.1 Google Services</h3>
               <p className="text-gray-700 mb-4">
-                Situs web kami menggunakan layanan Google, termasuk Google Analytics dan Google AdSense. Layanan ini memiliki kebijakan privasi mereka sendiri yang mengatur penggunaan data:
+                Our website uses Google services, including Google Analytics and Google AdSense. These services have their own privacy policies governing data use:
               </p>
               <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
                 <li>Google Privacy Policy: https://policies.google.com/privacy</li>
@@ -217,56 +217,56 @@ export default function PrivacyPolicy() {
                 <li>Google AdSense: https://policies.google.com/technologies/ads</li>
               </ul>
 
-              <h3 className="text-xl font-medium text-gray-900 mb-3">9.2 Tautan Eksternal</h3>
+              <h3 className="text-xl font-medium text-gray-900 mb-3">9.2 External Links</h3>
               <p className="text-gray-700">
-                Layanan kami mungkin berisi tautan ke situs web pihak ketiga. Kami tidak bertanggung jawab atas praktik privasi situs web tersebut.
+                Our Services may contain links to third-party websites. We are not responsible for the privacy practices of these sites.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Perlindungan Anak</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">10. Children's Privacy</h2>
               <p className="text-gray-700 mb-4">
-                Layanan kami tidak ditujukan untuk anak-anak di bawah usia 13 tahun. Kami tidak secara sengaja mengumpulkan informasi pribadi dari anak-anak di bawah 13 tahun. Jika Anda adalah orang tua atau wali dan mengetahui bahwa anak Anda telah memberikan informasi pribadi kepada kami, silakan hubungi kami.
+                Our Services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and know that your child has provided us with personal information, please contact us.
               </p>
               <p className="text-gray-700">
-                Jika kami menemukan bahwa anak di bawah 13 tahun telah memberikan kami informasi pribadi, kami akan menghapus informasi tersebut dari server kami segera.
+                If we discover that a child under 13 has provided us with personal information, we will delete such information from our servers immediately.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. Transfer Data Internasional</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">11. International Data Transfer</h2>
               <p className="text-gray-700 mb-4">
-                Informasi Anda mungkin ditransfer ke dan dipelihara di komputer yang berlokasi di luar negara bagian, provinsi, negara, atau yurisdiksi pemerintahan lainnya di mana undang-undang perlindungan data mungkin berbeda dari yurisdiksi Anda.
+                Your information may be transferred to and maintained on computers located outside your state, province, country, or governmental jurisdiction where data protection laws may differ.
               </p>
               <p className="text-gray-700">
-                Kami akan mengambil semua langkah yang wajar untuk memastikan bahwa data Anda diperlakukan dengan aman dan sesuai dengan Kebijakan Privasi ini.
+                We will take all reasonably necessary steps to ensure your data is treated securely and in accordance with this Privacy Policy.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">12. Perubahan Kebijakan Privasi</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">12. Changes to Privacy Policy</h2>
               <p className="text-gray-700 mb-4">
-                Kami dapat memperbarui Kebijakan Privasi ini dari waktu ke waktu. Kami akan memberitahu Anda tentang perubahan dengan memposting Kebijakan Privasi baru di halaman ini dan memperbarui tanggal "Terakhir diperbarui".
+                We may update this Privacy Policy periodically. We will notify you of changes by posting the new Privacy Policy on this page and updating the "Last updated" date.
               </p>
               <p className="text-gray-700">
-                Kami menyarankan Anda untuk meninjau Kebijakan Privasi ini secara berkala untuk mengetahui perubahan apa pun.
+                We recommend you review this Privacy Policy periodically for any changes.
               </p>
             </section>
 
             <section className="mb-8">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Informasi Kontak</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">13. Contact Information</h2>
               <p className="text-gray-700 mb-4">
-                Jika Anda memiliki pertanyaan tentang Kebijakan Privasi ini atau ingin menggunakan hak-hak Anda, silakan hubungi kami:
+                If you have questions about this Privacy Policy or wish to exercise your rights, please contact us:
               </p>
               <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-700 mb-2"><strong>Email:</strong> privacy@ihavetools.com</p>
-                <p className="text-gray-700 mb-2"><strong>Alamat:</strong> Jakarta, Indonesia</p>
+                <p className="text-gray-700 mb-2"><strong>Email:</strong> privacy@apptool.fun</p>
+                <p className="text-gray-700 mb-2"><strong>Address:</strong> Jakarta, Indonesia</p>
               </div>
             </section>
 
             <div className="border-t border-gray-200 pt-6 mt-8">
               <p className="text-sm text-gray-500 text-center">
-                Kebijakan Privasi ini terakhir diperbarui pada 27 Januari 2025
+                This Privacy Policy was last updated on August 13, 2025
               </p>
             </div>
           </div>

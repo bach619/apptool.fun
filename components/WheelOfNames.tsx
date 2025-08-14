@@ -5,6 +5,10 @@ import { Shuffle, Plus, X, Play, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Dialog,
+  DialogContent,
+} from '@/components/ui/dialog';
 import ShareButton from '@/components/ShareButton';
 import { useUrlParams } from '@/hooks/useUrlParams';
 import { toast } from 'sonner';
@@ -19,6 +23,7 @@ export default function WheelOfNames() {
   const [isSpinning, setIsSpinning] = useState(false);
   const [rotation, setRotation] = useState(0);
   const [winner, setWinner] = useState<string | null>(null);
+  const [isWinnerDialogOpen, setIsWinnerDialogOpen] = useState(false);
   const wheelRef = useRef<HTMLDivElement>(null);
   const urlParams = useUrlParams();
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -101,6 +106,7 @@ export default function WheelOfNames() {
 
       setWinner(names[winnerIndex]);
       setIsSpinning(false);
+      setIsWinnerDialogOpen(true);
       
       if (audioRef.current) {
         audioRef.current.currentTime = 0;
@@ -123,6 +129,23 @@ export default function WheelOfNames() {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
+      {winner && (
+        <Dialog open={isWinnerDialogOpen} onOpenChange={setIsWinnerDialogOpen}>
+          <DialogContent className="sm:max-w-md">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-6 text-center">
+              <div className="mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full mx-auto flex items-center justify-center shadow-lg">
+                  <span className="text-2xl">🎉</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-green-800 mb-2">Winner!</h3>
+              <p className="text-3xl font-bold text-green-600 mb-2">{winner}</p>
+              <p className="text-sm text-green-700">Congratulations! 🎊</p>
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
+
       <Card>
         <CardHeader className="flex flex-row items-center justify-between">
           <div>
@@ -308,18 +331,6 @@ export default function WheelOfNames() {
                 </Button>
               </div>
 
-              {winner && (
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-6 text-center">
-                  <div className="mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full mx-auto flex items-center justify-center shadow-lg">
-                      <span className="text-2xl">🎉</span>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-bold text-green-800 mb-2">Winner!</h3>
-                  <p className="text-3xl font-bold text-green-600 mb-2">{winner}</p>
-                  <p className="text-sm text-green-700">Congratulations! 🎊</p>
-                </div>
-              )}
 
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <h4 className="font-semibold text-blue-900 mb-2">How to use:</h4>

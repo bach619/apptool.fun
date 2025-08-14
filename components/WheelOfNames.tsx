@@ -118,7 +118,8 @@ export default function WheelOfNames() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <Card>
-        <CardHeader>
+      <CardHeader className="flex flex-row items-center justify-between">
+        <div>
           <CardTitle className="flex items-center space-x-2">
             <Shuffle className="w-5 h-5" />
             <span>Wheel of Names</span>
@@ -126,16 +127,14 @@ export default function WheelOfNames() {
           <CardDescription>
             Add names and spin the wheel to pick a random winner
           </CardDescription>
-        </CardHeader>
+        </div>
+        <ShareButton 
+          data={{ names: encodeURIComponent(JSON.stringify(names)) }}
+          toolName="Wheel of Names"
+        />
+      </CardHeader>
 
-        <CardContent className="space-y-6">
-          {/* Share Button */}
-          <div className="flex justify-end">
-            <ShareButton 
-              data={{ names: encodeURIComponent(JSON.stringify(names)) }}
-              toolName="Wheel of Names"
-            />
-          </div>
+      <CardContent className="space-y-6">
 
           {/* Add Name Input */}
           <div className="flex space-x-2">

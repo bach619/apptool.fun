@@ -21,7 +21,7 @@ const tools = [
 ];
 
 export default function HomeContent() {
-  const [activeTab, setActiveTab] = useState('currency');
+  const [activeTab, setActiveTab] = useState('wheel');
   const urlParams = useUrlParams();
 
   // Set active tab based on URL parameter

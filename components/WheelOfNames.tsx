@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { Shuffle, Plus, X, Play } from 'lucide-react';
+import { Shuffle, Plus, X, Play, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -108,6 +108,11 @@ export default function WheelOfNames() {
   const shuffleNames = () => {
     const shuffled = [...names].sort(() => Math.random() - 0.5);
     setNames(shuffled);
+  };
+
+  const clearNames = () => {
+    setNames([]);
+    setWinner(null);
   };
 
   return (
@@ -280,6 +285,16 @@ export default function WheelOfNames() {
                 >
                   <Shuffle className="w-4 h-4 mr-2" />
                   Shuffle Names
+                </Button>
+
+                <Button
+                  onClick={clearNames}
+                  variant="outline"
+                  disabled={names.length === 0}
+                  className="w-full bg-red-50 hover:bg-red-100 text-red-600 hover:text-red-700"
+                >
+                  <Trash2 className="w-4 h-4 mr-2" />
+                  Clear Names
                 </Button>
               </div>
 

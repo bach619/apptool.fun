@@ -1,19 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { useMemo } from 'react';
 
 export function useUrlParams() {
   const searchParams = useSearchParams();
-  const [params, setParams] = useState<Record<string, string>>({});
-
-  useEffect(() => {
-    const paramObj: Record<string, string> = {};
+  
+  return useMemo(() => {
+    const params: Record<string, string> = {};
     searchParams.forEach((value, key) => {
-      paramObj[key] = value;
+      params[key] = value;
     });
-    setParams(paramObj);
+    return params;
   }, [searchParams]);
-
-  return params;
 }

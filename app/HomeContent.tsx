@@ -1,16 +1,17 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, Suspense, lazy } from 'react';
 import { Calculator, DollarSign, Clock, Scale, Shuffle } from 'lucide-react';
 import { useUrlParams } from '@/hooks/useUrlParams';
-import { useEffect } from 'react';
-import CurrencyConverter from '@/components/CurrencyConverter';
-import UnitConverter from '@/components/UnitConverter';
-import TimeZoneConverter from '@/components/TimeZoneConverter';
-import SimpleCalculator from '@/components/SimpleCalculator';
-import WheelOfNames from '@/components/WheelOfNames';
 import Image from 'next/image';
 import Link from 'next/link';
+
+// Lazy load components
+const CurrencyConverter = lazy(() => import('@/components/CurrencyConverter'));
+const UnitConverter = lazy(() => import('@/components/UnitConverter'));
+const TimeZoneConverter = lazy(() => import('@/components/TimeZoneConverter'));
+const SimpleCalculator = lazy(() => import('@/components/SimpleCalculator'));
+const WheelOfNames = lazy(() => import('@/components/WheelOfNames'));
 
 const tools = [
   { id: 'wheel', name: 'Wheel of Names', icon: Shuffle, component: WheelOfNames },
@@ -73,7 +74,9 @@ export default function HomeContent() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <h1 className="text-3xl font-bold text-center mb-8">Free Online Tools for Instant Conversions & Calculations</h1>
-        <ActiveComponent />
+        <Suspense fallback={<div className="flex justify-center items-center h-64">Loading tool...</div>}>
+          <ActiveComponent />
+        </Suspense>
       </main>
 
       {/* Footer */}

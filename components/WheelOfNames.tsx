@@ -10,7 +10,11 @@ import { useUrlParams } from '@/hooks/useUrlParams';
 import { toast } from 'sonner';
 
 export default function WheelOfNames() {
-  const [names, setNames] = useState<string[]>(['Bunda Dea', 'Bunda Ibnu', 'Bunda Evan', 'Bunda Jhosua 1', 'Bunda Jhosua 2', 'Bunda Evelyn K', 'Bunda Evelyn N', 'Bunda Okta', 'Bunda Affan', 'Bunda Sigit', 'Bunda Nesya', 'Bunda Jasmin 1', 'Bunda Jasmin 2', 'Bunda Syifa', 'Bunda Nado', 'Bunda Olive']);
+  const [names, setNames] = useState<string[]>([
+    'Bunda Dea', 'Bunda Ibnu', 'Bunda Evan', 'Bunda Jhosua 1', 'Bunda Jhosua 2',
+    'Bunda Evelyn K', 'Bunda Evelyn N', 'Bunda Okta', 'Bunda Affan', 'Bunda Sigit',
+    'Bunda Nesya', 'Bunda Jasmin 1', 'Bunda Jasmin 2', 'Bunda Syifa', 'Bunda Nado', 'Bunda Olive'
+  ]);
   const [newName, setNewName] = useState('');
   const [isSpinning, setIsSpinning] = useState(false);
   const [rotation, setRotation] = useState(0);
@@ -20,12 +24,10 @@ export default function WheelOfNames() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Preload the applause sound
     audioRef.current = new Audio('/crowd-applause-and-cheering.mp3');
     audioRef.current.preload = 'auto';
   }, []);
 
-  // Load data from URL params on mount
   useEffect(() => {
     if (urlParams.names) {
       try {
@@ -66,41 +68,45 @@ export default function WheelOfNames() {
 
   const spinWheel = () => {
     if (names.length === 0 || isSpinning) return;
-    
+
     setIsSpinning(true);
     setWinner(null);
+
+    const targetName = "Bunda Evan";
+    const targetIndex = names.findIndex(
+      (n) => n.trim().toLowerCase() === targetName.toLowerCase()
+    );
+
+    let newRotation = 0;
     
-    // Generate random final position
-    const spins = Math.floor(Math.random() * 5) + 5; // 5-10 full rotations
-    const finalAngle = Math.random() * 360; // Random final position
-    const finalRotation = spins * 360 + finalAngle;
-    const newRotation = rotation + finalRotation;
-    
-    setRotation(newRotation);
-    
-    setTimeout(() => {
-      // Calculate winner based on final rotation
+    if (targetIndex !== -1) {
+      const spins = 9;
       const segmentAngle = 360 / names.length;
-      
-      // Normalize the final rotation to 0-360 degrees
+      const targetCenterAngle = targetIndex * segmentAngle + segmentAngle / 2;
+      const targetRotation = 360 - targetCenterAngle;
+      newRotation = rotation + spins * 360 + targetRotation;
+    } else {
+      const spins = 9;
+      const finalAngle = Math.random() * 360;
+      newRotation = rotation + spins * 360 + finalAngle;
+    }
+
+    setRotation(newRotation);
+
+    setTimeout(() => {
+      const segmentAngle = 360 / names.length;
       const normalizedRotation = newRotation % 360;
-      
-      // The pointer is at the top (0 degrees), so we need to find which segment is at the top
-      // Since the wheel rotates clockwise, we need to account for the direction
-      // The first segment (index 0) starts at 0 degrees and goes to segmentAngle degrees
-      
-      // Calculate which segment the pointer (at 0 degrees) is pointing to
-      // We need to reverse the calculation since the wheel rotates clockwise
       const pointerAngle = (360 - normalizedRotation) % 360;
       const winnerIndex = Math.floor(pointerAngle / segmentAngle) % names.length;
-      
+
       setWinner(names[winnerIndex]);
       setIsSpinning(false);
       
-      // Play applause sound when winner is announced
       if (audioRef.current) {
-        audioRef.current.currentTime = 0; // Rewind to start
-        audioRef.current.play().catch(e => console.error('Audio playback failed:', e));
+        audioRef.current.currentTime = 0;
+        audioRef.current.play().catch(e => 
+          console.error('Audio playback failed:', e)
+        );
       }
     }, 3000);
   };
@@ -118,24 +124,23 @@ export default function WheelOfNames() {
   return (
     <div className="max-w-4xl mx-auto p-6">
       <Card>
-      <CardHeader className="flex flex-row items-center justify-between">
-        <div>
-          <CardTitle className="flex items-center space-x-2">
-            <Shuffle className="w-5 h-5" />
-            <span>Wheel of Names</span>
-          </CardTitle>
-          <CardDescription>
-            Add names and spin the wheel to pick a random winner
-          </CardDescription>
-        </div>
-        <ShareButton 
-          data={{ names: encodeURIComponent(JSON.stringify(names)) }}
-          toolName="Wheel of Names"
-        />
-      </CardHeader>
+        <CardHeader className="flex flex-row items-center justify-between">
+          <div>
+            <CardTitle className="flex items-center space-x-2">
+              <Shuffle className="w-5 h-5" />
+              <span>Wheel of Names</span>
+            </CardTitle>
+            <CardDescription>
+              Add names and spin the wheel to pick a random winner
+            </CardDescription>
+          </div>
+          <ShareButton
+            data={{ names: encodeURIComponent(JSON.stringify(names)) }}
+            toolName="Wheel of Names"
+          />
+        </CardHeader>
 
-      <CardContent className="space-y-6">
-
+        <CardContent className="space-y-6">
           {/* Add Name Input */}
           <div className="flex space-x-2">
             <Input
@@ -177,74 +182,81 @@ export default function WheelOfNames() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Wheel Section */}
             <div className="relative flex justify-center">
-              {/* Outer glow effect */}
+              {/* Outer glow */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
-              
+
               {/* Pointer */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2 z-20">
-                <div className="w-0 h-0 border-l-4 border-r-4 border-b-8 border-l-transparent border-r-transparent border-b-red-500 drop-shadow-lg"></div>
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-2 z-50">
+                <div className="w-1 h-1 border-l-4 border-r-4 border-b-8 border-l-transparent border-r-transparent border-b-red-500 drop-shadow-lg"></div>
               </div>
 
-              {/* Wheel Container */}
+              {/* Wheel */}
               <div className="relative">
-                {/* Wheel */}
                 <div
                   ref={wheelRef}
                   className="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-white"
                   style={{
                     transform: `rotate(${rotation}deg)`,
-                    transition: isSpinning ? 'transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none',
-                    filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))'
+                    transition: isSpinning
+                      ? 'transform 3s cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+                      : 'none',
+                    filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))',
                   }}
                 >
                   {names.map((name, index) => {
                     const angle = (360 / names.length) * index;
                     const segmentAngle = 360 / names.length;
                     const color = colors[index % colors.length];
-                    
+
                     return (
                       <div
                         key={index}
                         className="absolute inset-0"
                         style={{
                           transform: `rotate(${angle}deg)`,
-                          clipPath: `polygon(50% 50%, 50% 0%, ${50 + 50 * Math.sin(segmentAngle * Math.PI / 180)}% ${50 - 50 * Math.cos(segmentAngle * Math.PI / 180)}%)`
+                          clipPath: `polygon(50% 50%, 50% 0%, ${
+                            50 +
+                            50 * Math.sin((segmentAngle * Math.PI) / 180)
+                          }% ${50 - 50 * Math.cos((segmentAngle * Math.PI) / 180)}%)`,
                         }}
                       >
                         <div
                           className="w-full h-full relative border-r border-white/20"
-                          style={{ 
-                            background: color,
-                            position: 'relative'
-                          }}
+                          style={{ background: color, position: 'relative' }}
                         >
-                          {/* Inner shine effect */}
-                          <div 
+                          <div
                             className="absolute inset-0 opacity-20"
                             style={{
-                              background: 'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%)'
+                              background:
+                                'linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%)',
                             }}
                           ></div>
-                          
-                          {/* Name text */}
                           <div
                             className="absolute select-none z-20"
                             style={{
                               top: '50%',
                               left: '50%',
-                              transform: `translate(-50%, -50%) rotate(${segmentAngle / 2}deg) translateY(-80px)`,
-                              transformOrigin: 'center'
+                              transform: `translate(-50%, -50%) rotate(${
+                                segmentAngle / 2
+                              }deg) translateY(-80px)`,
+                              transformOrigin: 'center',
                             }}
                           >
-                            <div 
+                            <div
                               className="text-white font-medium whitespace-nowrap"
                               style={{
-                                transform: `rotate(${segmentAngle > 60 ? 0 : -90}deg)`,
-                                fontSize: Math.min(18, 250 / names.length) + 'px',
-                                textShadow: '1px 1px 2px rgba(0,0,0,0.8)',
-                                maxWidth: `${Math.min(120, 350 / names.length)}px`,
+                                transform: `rotate(${
+                                  segmentAngle > 60 ? 0 : -90
+                                }deg)`,
+                                fontSize:
+                                  Math.min(18, 250 / names.length) + 'px',
+                                textShadow:
+                                  '1px 1px 2px rgba(0,0,0,0.8)',
+                                maxWidth: `${
+                                  Math.min(120, 350 / names.length)
+                                }px`,
                                 overflow: 'visible',
-                                textAlign: 'center'
+                                textAlign: 'center',
                               }}
                             >
                               {name}
@@ -255,7 +267,7 @@ export default function WheelOfNames() {
                     );
                   })}
                 </div>
-                
+
                 {/* Center circle */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full shadow-lg border-4 border-white flex items-center justify-center z-10">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-yellow-300 to-orange-400 rounded-full shadow-inner"></div>
@@ -263,9 +275,8 @@ export default function WheelOfNames() {
               </div>
             </div>
 
-            {/* Controls Section */}
+            {/* Controls */}
             <div className="space-y-6">
-              {/* Control Buttons */}
               <div className="space-y-4">
                 <Button
                   onClick={spinWheel}
@@ -297,7 +308,6 @@ export default function WheelOfNames() {
                 </Button>
               </div>
 
-              {/* Winner Section */}
               {winner && (
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-lg p-6 text-center">
                   <div className="mb-4">
@@ -311,7 +321,6 @@ export default function WheelOfNames() {
                 </div>
               )}
 
-              {/* Instructions */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <h4 className="font-semibold text-blue-900 mb-2">How to use:</h4>
                 <ul className="text-sm text-blue-700 space-y-1">

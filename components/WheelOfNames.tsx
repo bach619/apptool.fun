@@ -1,13 +1,12 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Shuffle, Plus, X, Play } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import ShareButton from '@/components/ShareButton';
 import { useUrlParams } from '@/hooks/useUrlParams';
-import { useEffect } from 'react';
 import { toast } from 'sonner';
 
 export default function WheelOfNames() {
@@ -18,6 +17,13 @@ export default function WheelOfNames() {
   const [winner, setWinner] = useState<string | null>(null);
   const wheelRef = useRef<HTMLDivElement>(null);
   const urlParams = useUrlParams();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    // Preload the applause sound
+    audioRef.current = new Audio('/crowd-applause-and-cheering.mp3');
+    audioRef.current.preload = 'auto';
+  }, []);
 
   // Load data from URL params on mount
   useEffect(() => {
@@ -90,6 +96,12 @@ export default function WheelOfNames() {
       
       setWinner(names[winnerIndex]);
       setIsSpinning(false);
+      
+      // Play applause sound when winner is announced
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0; // Rewind to start
+        audioRef.current.play().catch(e => console.error('Audio playback failed:', e));
+      }
     }, 3000);
   };
 

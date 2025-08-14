@@ -13,11 +13,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const tools = [
+  { id: 'wheel', name: 'Wheel of Names', icon: Shuffle, component: WheelOfNames },
   { id: 'currency', name: 'Currency', icon: DollarSign, component: CurrencyConverter },
   { id: 'units', name: 'Units', icon: Scale, component: UnitConverter },
   { id: 'timezone', name: 'Time Zone', icon: Clock, component: TimeZoneConverter },
   { id: 'calculator', name: 'Calculator', icon: Calculator, component: SimpleCalculator },
-  { id: 'wheel', name: 'Wheel of Names', icon: Shuffle, component: WheelOfNames },
 ];
 
 export default function HomeContent() {

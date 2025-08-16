@@ -53,20 +53,20 @@ export default function HomeContent() {
   return (
     <>
       {/* Navigation Tabs */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center space-x-8 overflow-x-auto">
+<nav className="bg-white border-b border-gray-200">
+  <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+    <div className="flex justify-start sm:justify-center space-x-2 sm:space-x-4 lg:space-x-8 overflow-x-auto">
             {tools.map((tool) => {
               const Icon = tool.icon;
               return (
-                <button
-                  key={tool.id}
-                  onClick={() => setActiveTab(tool.id)}
-                  className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
-                    activeTab === tool.id
-                      ? 'border-blue-500 text-blue-600 font-bold'
-                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
+<button
+  key={tool.id}
+  onClick={() => setActiveTab(tool.id)}
+  className={`flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-2 py-2 px-1 sm:py-4 border-b-2 font-medium text-xs sm:text-sm whitespace-nowrap transition-colors ${
+    activeTab === tool.id
+      ? 'border-blue-500 text-blue-600 font-bold'
+      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+  }`}
                 >
                   <Icon className="w-4 h-4" />
                   <span className={activeTab === tool.id ? 'font-bold' : ''}>{tool.name}</span>
@@ -78,10 +78,10 @@ export default function HomeContent() {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Free Online Tools for Instant Conversions & Calculations</h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+<main className="max-w-7xl mx-auto px-4 py-6 sm:py-8 sm:px-6 lg:px-8">
+  <div className="text-center mb-6 sm:mb-10">
+    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Free Online Tools for Instant Conversions & Calculations</h1>
+    <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-2 sm:px-0">
             Welcome to I have Tools - your one-stop solution for all conversion and calculation needs. 
             Our free online tools help you quickly convert currencies, units, time zones, and more. 
             No downloads or registration required - just select a tool and start converting!
@@ -93,9 +93,9 @@ export default function HomeContent() {
         </Suspense>
         
         {/* Why Choose Our Tools */}
-        <div className="mt-12 bg-gray-50 rounded-xl p-8 border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Our Tools?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div className="mt-8 sm:mt-12 bg-gray-50 rounded-xl p-4 sm:p-8 border border-gray-200">
+  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Why Choose Our Tools?</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <div className="bg-white p-6 rounded-lg shadow-sm">
               <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <span className="text-xl">⚡</span>
@@ -129,9 +129,9 @@ export default function HomeContent() {
             </div>
           </div>
           
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <h3 className="text-lg font-semibold mb-4">Popular Tool Uses</h3>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
+<div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
+  <h3 className="text-md sm:text-lg font-semibold mb-3 sm:mb-4">Popular Tool Uses</h3>
+  <ul className="grid grid-cols-1 gap-3 sm:gap-4 text-sm sm:text-base text-gray-600">
               <li className="flex items-start">
                 <span className="text-green-500 mr-2">✓</span>
                 <span>Convert currency for international travel planning</span>
@@ -154,17 +154,17 @@ export default function HomeContent() {
       </main>
 
       {/* FAQ Section with Accordion */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-        <div className="bg-white rounded-xl p-8 border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 sm:mt-12">
+  <div className="bg-white rounded-xl p-4 sm:p-8 border border-gray-200">
+    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Frequently Asked Questions</h2>
           
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="currency">
-              <AccordionTrigger className="text-left hover:no-underline">
-                <span className="text-lg font-semibold text-gray-900">How do I use the free online currency converter?</span>
-              </AccordionTrigger>
-              <AccordionContent>
-                <p className="text-gray-600">
+<AccordionTrigger className="text-left hover:no-underline px-0 py-2 sm:py-0">
+  <span className="text-base sm:text-lg font-semibold text-gray-900 text-left">How do I use the free online currency converter?</span>
+</AccordionTrigger>
+<AccordionContent className="px-0">
+  <p className="text-gray-600 text-sm sm:text-base">
                   Simply select the Currency Converter tool, enter the amount you want to convert, 
                   choose your source and target currencies, and get instant conversion results 
                   using real-time exchange rates.
@@ -224,9 +224,9 @@ export default function HomeContent() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+<footer className="bg-gray-900 text-white mt-8 sm:mt-12">
+  <div className="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8 sm:py-12">
+<div className="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-8">
             {/* Company Info */}
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
@@ -312,10 +312,10 @@ export default function HomeContent() {
           {/* Bottom Bar */}
           <div className="border-t border-gray-700 mt-8 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="text-sm text-gray-400 mb-4 md:mb-0">
-                <p>Made with ❤️ for everyone who needs quick, reliable online tools.</p>
-              </div>
-              <div className="flex space-x-6 text-sm text-gray-400">
+<div className="text-sm text-gray-400 mb-4 md:mb-0 text-center md:text-left">
+  <p>Made with ❤️ for everyone who needs quick, reliable online tools.</p>
+</div>
+<div className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-6 text-sm text-gray-400">
                 <Link href="/privacy-policy" className="hover:text-white transition-colors">
                   Privacy
                 </Link>

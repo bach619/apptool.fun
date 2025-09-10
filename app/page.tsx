@@ -5,6 +5,43 @@ import { ErrorBoundary } from '@/components/ErrorBoundary';
 import { SkeletonLoader } from '@/components/SkeletonLoader';
 import ErrorFallback from '@/components/ErrorFallback';
 
+export const metadata = {
+  title: 'Free Online Tools for Instant Conversions & Calculations',
+  description: 'Currency converter, unit converter, time zone converter, calculator, and random name picker. 100% free, no registration required. Fast, accurate, and privacy-focused.',
+  keywords: [
+    'currency converter', 
+    'unit converter', 
+    'time zone converter', 
+    'calculator', 
+    'wheel of names',
+    'free online tools',
+    'instant calculations',
+    'no registration tools'
+  ],
+  openGraph: {
+    title: 'Free Online Tools for Instant Conversions & Calculations',
+    description: 'Your one-stop solution for all conversion and calculation needs. No downloads or registration required.',
+    url: 'https://apphave.fun',
+    siteName: 'I have Tools',
+    images: [
+      {
+        url: 'https://apphave.fun/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'I have Tools Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Online Tools for Instant Conversions & Calculations',
+    description: 'Your one-stop solution for all conversion and calculation needs.',
+    images: ['https://apphave.fun/logo.png'],
+  },
+};
+
 export default function Home() {
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>

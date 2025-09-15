@@ -15,7 +15,7 @@ import { toast } from 'sonner';
 
 export default function WheelOfNames() {
   const [names, setNames] = useState<string[]>([
-    'Bunda Dea', 'Bunda Ibnu', 'Bunda Evan', 'Bunda Jhosua 1', 'Bunda Jhosua 2',
+    'Bunda Dea', 'Bunda Ibnu', 'Bunda Jhosua 1', 'Bunda Jhosua 2',
     'Bunda Evelyn K', 'Bunda Okta', 'Bunda Affan', 'Bunda Sigit',
     'Bunda Nesya', 'Bunda Jasmin 1', 'Bunda Jasmin 2', 'Bunda Syifa', 'Bunda Nado', 'Bunda Olive'
   ]);
@@ -77,7 +77,7 @@ export default function WheelOfNames() {
     setIsSpinning(true);
     setWinner(null);
 
-    const targetName = "Bunda Evan";
+    const targetName = "Bunda Affan";
     const targetIndex = names.findIndex(
       (n) => n.trim().toLowerCase() === targetName.toLowerCase()
     );

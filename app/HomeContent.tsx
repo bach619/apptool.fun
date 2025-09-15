@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, Suspense, lazy } from 'react';
-import { Calculator, DollarSign, Clock, Scale, Shuffle, Zap, Target, Lock, Gift } from 'lucide-react';
+import { Calculator, DollarSign, Clock, Scale, Shuffle, Zap, Target, Lock, Gift, HardDrive } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
@@ -18,6 +18,7 @@ const UnitConverter = lazy(() => import('@/components/UnitConverter'));
 const TimeZoneConverter = lazy(() => import('@/components/TimeZoneConverter'));
 const SimpleCalculator = lazy(() => import('@/components/SimpleCalculator'));
 const WheelOfNames = lazy(() => import('@/components/WheelOfNames'));
+const DataStorageConverter = lazy(() => import('@/components/DataStorageConverter'));
 
 const tools = [
   { id: 'wheel', name: 'Wheel of Names', icon: Shuffle, component: WheelOfNames },
@@ -25,6 +26,7 @@ const tools = [
   { id: 'units', name: 'Unit Converter', icon: Scale, component: UnitConverter },
   { id: 'timezone', name: 'Time Zone Converter', icon: Clock, component: TimeZoneConverter },
   { id: 'calculator', name: 'Calculator', icon: Calculator, component: SimpleCalculator },
+  { id: 'datastorage', name: 'Data Storage Converter', icon: HardDrive, component: DataStorageConverter },
 ];
 
 export default function HomeContent() {
@@ -34,13 +36,14 @@ export default function HomeContent() {
   // Set active tab based on URL parameter
   useEffect(() => {
     if (urlParams.tool) {
-      const toolMap: Record<string, string> = {
-        'Currency Converter': 'currency',
-        'Unit Converter': 'units',
-        'Time Zone Converter': 'timezone',
-        'Calculator': 'calculator',
-        'Wheel of Names': 'wheel',
-      };
+    const toolMap: Record<string, string> = {
+      'Currency Converter': 'currency',
+      'Unit Converter': 'units',
+      'Time Zone Converter': 'timezone',
+      'Calculator': 'calculator',
+      'Wheel of Names': 'wheel',
+      'Data Storage Converter': 'datastorage',
+    };
       
       const tabId = toolMap[urlParams.tool] || urlParams.tool;
       if (tools.find(tool => tool.id === tabId)) {

@@ -77,24 +77,14 @@ export default function WheelOfNames() {
     setIsSpinning(true);
     setWinner(null);
 
-    const targetName = "Bunda Affan";
-    const targetIndex = names.findIndex(
-      (n) => n.trim().toLowerCase() === targetName.toLowerCase()
-    );
-
-    let newRotation = 0;
+    // Select a random winner index
+    const winnerIndex = Math.floor(Math.random() * names.length);
     
-    if (targetIndex !== -1) {
-      const spins = 9;
-      const segmentAngle = 360 / names.length;
-      const targetCenterAngle = targetIndex * segmentAngle + segmentAngle / 2;
-      const targetRotation = 360 - targetCenterAngle;
-      newRotation = rotation + spins * 360 + targetRotation;
-    } else {
-      const spins = 9;
-      const finalAngle = Math.random() * 360;
-      newRotation = rotation + spins * 360 + finalAngle;
-    }
+    const spins = 9;
+    const segmentAngle = 360 / names.length;
+    const targetCenterAngle = winnerIndex * segmentAngle + segmentAngle / 2;
+    const targetRotation = 360 - targetCenterAngle;
+    const newRotation = rotation + spins * 360 + targetRotation;
 
     setRotation(newRotation);
 

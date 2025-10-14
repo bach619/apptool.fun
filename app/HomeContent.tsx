@@ -318,27 +318,32 @@ export default function HomeContent() {
               <ul className="space-y-2 text-gray-300">
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
-                    Currency Converter
+                    Free Currency Converter
                   </Link>
                 </li>
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
-                    Unit Converter
+                    Free Unit Converter
                   </Link>
                 </li>
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
-                    Time Zone Converter
+                    Free Time Zone Converter
                   </Link>
                 </li>
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
-                    Calculator
+                    Free Calculator
                   </Link>
                 </li>
                 <li>
                   <Link href="/" className="hover:text-white transition-colors">
-                    Wheel of Names
+                    Free Wheel of Names
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://img.apphave.fun/" className="hover:text-white transition-colors">
+                    Free Image Converter
                   </Link>
                 </li>
               </ul>

@@ -8,11 +8,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { useState } from 'react';
 
-export const metadata = {
-  title: 'Contact Support - I have Tools',
-  description: 'Get help with I have Tools. Contact our support team for assistance with currency converter, unit converter, calculator, and other online tools.',
-};
-
 export default function ContactSupport() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);

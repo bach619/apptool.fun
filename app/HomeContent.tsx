@@ -172,7 +172,7 @@ export default function HomeContent() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="currency">
 <AccordionTrigger className="text-left hover:no-underline px-0 py-2 sm:py-0">
-  <span className="text-base sm:text-lg font-semibold text-gray-900 text-left">How do I use the free online currency converter?</span>
+  <h3 className="text-base sm:text-lg font-semibold text-gray-900 text-left m-0">How do I use the free online currency converter?</h3>
 </AccordionTrigger>
 <AccordionContent className="px-0">
   <div className="text-gray-600 text-sm sm:text-base">
@@ -191,7 +191,7 @@ export default function HomeContent() {
             
             <AccordionItem value="cooking">
               <AccordionTrigger className="text-left hover:no-underline">
-                <span className="text-lg font-semibold text-gray-900">Can I convert cooking measurements with your unit converter?</span>
+                <h3 className="text-lg font-semibold text-gray-900 m-0">Can I convert cooking measurements with your unit converter?</h3>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="text-gray-600">
@@ -209,7 +209,7 @@ export default function HomeContent() {
             
             <AccordionItem value="timezone">
               <AccordionTrigger className="text-left hover:no-underline">
-                <span className="text-lg font-semibold text-gray-900">How can I schedule meetings across time zones?</span>
+                <h3 className="text-lg font-semibold text-gray-900 m-0">How can I schedule meetings across time zones?</h3>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="text-gray-600">
@@ -228,7 +228,7 @@ export default function HomeContent() {
             
             <AccordionItem value="wheel">
               <AccordionTrigger className="text-left hover:no-underline">
-                <span className="text-lg font-semibold text-gray-900">What are practical uses for the random name picker wheel?</span>
+                <h3 className="text-lg font-semibold text-gray-900 m-0">What are practical uses for the random name picker wheel?</h3>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="text-gray-600">
@@ -247,9 +247,9 @@ export default function HomeContent() {
             
             <AccordionItem value="calculator">
               <AccordionTrigger className="text-left hover:no-underline">
-                <span className="text-lg font-semibold text-gray-900">What types of calculations can I perform with your calculator?</span>
+                <h3 className="text-lg font-semibold text-gray-900 m-0">What types of calculations can I perform with your calculator?</h3>
               </AccordionTrigger>
-              <AccordionContent>
+<AccordionContent>
                 <div className="text-gray-600">
                   <p className="mb-3">Our calculator handles a wide range of everyday calculations:</p>
                   <ul className="list-disc pl-5 space-y-1 mb-3">
@@ -266,7 +266,7 @@ export default function HomeContent() {
 
             <AccordionItem value="privacy">
               <AccordionTrigger className="text-left hover:no-underline">
-                <span className="text-lg font-semibold text-gray-900">How do you protect my data and privacy?</span>
+                <h3 className="text-lg font-semibold text-gray-900 m-0">How do you protect my data and privacy?</h3>
               </AccordionTrigger>
               <AccordionContent>
                 <div className="text-gray-600">
@@ -283,6 +283,67 @@ export default function HomeContent() {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+          
+          {/* FAQ Structured Data */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "How do I use the free online currency converter?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Our currency converter is designed for simplicity and accuracy: 1. Select the Currency Converter tool from the navigation 2. Enter the amount you want to convert in the input field 3. Choose the source currency from the dropdown menu 4. Select the target currency for conversion 5. View the converted amount instantly. We update exchange rates every hour using data from reliable financial sources to ensure accuracy."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Can I convert cooking measurements with your unit converter?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Yes, our unit converter is ideal for cooking and baking conversions. You can convert between cups, tablespoons, teaspoons, milliliters, fluid ounces, switch between grams, ounces, pounds for dry ingredients, do temperature conversions (Celsius to Fahrenheit), and volume to weight conversions for common ingredients. We've included a special 'Cooking Mode' that shows only relevant units."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How can I schedule meetings across time zones?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Our Time Zone Converter simplifies global scheduling: 1. Select your local time zone 2. Add the time zones of all meeting participants 3. Set your proposed meeting time 4. See equivalent times in all participants' locations 5. Find overlapping business hours automatically. The tool also accounts for Daylight Saving Time changes and provides a shareable link."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What are practical uses for the random name picker wheel?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Our Wheel of Names is versatile for many scenarios: Classroom - Randomly select students for participation; Giveaways - Fairly pick contest winners from entries; Decision Making - Choose between options when undecided; Team Building - Assign tasks or roles randomly; Games - Create random teams or select game challenges."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What types of calculations can I perform with your calculator?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Our calculator handles a wide range of everyday calculations: Basic arithmetic (addition, subtraction, multiplication, division), percentage calculations (discounts, tips, tax, markups), memory functions for storing and recalling values, square roots and exponents, and simple financial calculations (interest, loan payments)."
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "How do you protect my data and privacy?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Your privacy is our top priority: All calculations happen locally in your browser - no data sent to servers; We don't store any personal information or conversion inputs; No tracking cookies for analytics or advertising; Secure HTTPS connection for all data transmission; Regular security audits of our codebase."
+                    }
+                  }
+                ]
+              })
+            }}
+          />
         </div>
       </div>
 

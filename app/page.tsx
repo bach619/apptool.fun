@@ -6,20 +6,25 @@ import { SkeletonLoader } from '@/components/SkeletonLoader';
 import ErrorFallback from '@/components/ErrorFallback';
 
 export const metadata = {
-  title: 'Free Online Tools for Instant Conversions & Calculations',
-  description: 'Currency converter, unit converter, time zone converter, calculator, and random name picker. 100% free, no registration required. Fast, accurate, and privacy-focused.',
+  title: 'Free Online Tools for Instant Conversions & Calculations - I have Tools',
+  description: 'Currency converter, unit converter, time zone converter, calculator, wheel of names, and data storage converter. 100% free, no registration required. Fast, accurate, and privacy-focused.',
   keywords: [
     'currency converter', 
     'unit converter', 
     'time zone converter', 
     'calculator', 
     'wheel of names',
+    'data storage converter',
     'free online tools',
     'instant calculations',
-    'no registration tools'
+    'no registration tools',
+    'measurement converter',
+    'online calculator',
+    'random name picker',
+    'conversion tools'
   ],
   openGraph: {
-    title: 'Free Online Tools for Instant Conversions & Calculations',
+    title: 'Free Online Tools for Instant Conversions & Calculations - I have Tools',
     description: 'Your one-stop solution for all conversion and calculation needs. No downloads or registration required.',
     url: 'https://apphave.fun',
     siteName: 'I have Tools',
@@ -36,9 +41,12 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Online Tools for Instant Conversions & Calculations',
+    title: 'Free Online Tools for Instant Conversions & Calculations - I have Tools',
     description: 'Your one-stop solution for all conversion and calculation needs.',
     images: ['https://apphave.fun/logo.png'],
+  },
+  alternates: {
+    canonical: 'https://apphave.fun',
   },
 };
 

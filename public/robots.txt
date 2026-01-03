@@ -1,18 +1,54 @@
+# robots.txt for I have Tools - Free Online Tools
+# Generated: 2026-01-03
+
+# Primary Crawlers
 User-agent: *
 Allow: /
+
+# Specific Crawler Instructions
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 3
 
 # Sitemap
 Sitemap: https://apphave.fun/sitemap.xml
 
-# Google AdSense
+# Host Directive (primary domain)
+Host: https://apphave.fun
+
+# Google AdSense Verification
 google.com, pub-6435811821902528, DIRECT, f08c47fec0942fa0
 
-# Crawl-delay
+# Crawl-delay for all other crawlers
 Crawl-delay: 1
 
-# Disallow API routes
+# Disallowed paths
+# API routes - no indexing needed
 Disallow: /api/
+
+# Development and admin paths (if any)
+Disallow: /admin/
+Disallow: /login/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
 
 # Allow important files
 Allow: /sitemap.xml
 Allow: /robots.txt
+Allow: /.well-known/
+
+# SEO Guidelines
+# Our site is static and all content should be indexed
+# Tools are accessible via query parameters which are included in sitemap

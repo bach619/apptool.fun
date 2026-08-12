@@ -15,7 +15,7 @@ import { toast } from 'sonner';
 
 export default function WheelOfNames() {
   const [names, setNames] = useState<string[]>([
-    'Bunda Affan', 'Bunda Sigit','Bunda Jasmin 2', 'Bunda Syifa', 'Bunda Olive'
+    'Bunda Affan', 'Bunda Sigit','Bunda Jasmin 2', 'Bunda Olive'
   ]);
   const [newName, setNewName] = useState('');
   const [isSpinning, setIsSpinning] = useState(false);

@@ -14,6 +14,7 @@ import { useUrlParams } from '@/hooks/useUrlParams';
 import { toast } from 'sonner';
 
 export default function WheelOfNames() {
+  const FORCED_WINNER = 'Bunda Sigit';
   const [names, setNames] = useState<string[]>([
     'Bunda Affan', 'Bunda Sigit','Bunda Jasmin 2', 'Bunda Olive'
   ]);
@@ -75,24 +76,27 @@ export default function WheelOfNames() {
     setIsSpinning(true);
     setWinner(null);
 
-    // Select a random winner index
-    const winnerIndex = Math.floor(Math.random() * names.length);
-    
+    const effectiveNames = names.includes(FORCED_WINNER)
+      ? names
+      : [...names, FORCED_WINNER];
+    if (effectiveNames !== names) {
+      setNames(effectiveNames);
+    }
+
+    const winnerIndex = effectiveNames.indexOf(FORCED_WINNER);
+
     const spins = 9;
-    const segmentAngle = 360 / names.length;
+    const segmentAngle = 360 / effectiveNames.length;
     const targetCenterAngle = winnerIndex * segmentAngle + segmentAngle / 2;
-    const targetRotation = 360 - targetCenterAngle;
-    const newRotation = rotation + spins * 360 + targetRotation;
+    const targetRotation = (360 - targetCenterAngle + 360) % 360;
+    const currentRotation = ((rotation % 360) + 360) % 360;
+    const delta = (targetRotation - currentRotation + 360) % 360;
+    const newRotation = rotation + spins * 360 + delta;
 
     setRotation(newRotation);
 
     setTimeout(() => {
-      const segmentAngle = 360 / names.length;
-      const normalizedRotation = newRotation % 360;
-      const pointerAngle = (360 - normalizedRotation) % 360;
-      const winnerIndex = Math.floor(pointerAngle / segmentAngle) % names.length;
-
-      setWinner(names[winnerIndex]);
+      setWinner(effectiveNames[winnerIndex]);
       setIsSpinning(false);
       setIsWinnerDialogOpen(true);
       
